@@ -1,0 +1,8 @@
+dist
+.nuxt
+
+# Local Netlify folder
+.netlify
+static/_uploads
+_content
+_uploads
