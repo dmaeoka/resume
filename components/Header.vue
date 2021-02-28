@@ -53,24 +53,24 @@ export default {
 	methods: {
 		goTo(e) {
 			const target = e.currentTarget;
-			const section = target.getAttribute("href");
-			if (section.length > 0) {
-				console.log(section.offsetTop);
+			const href = target.getAttribute("href");
+			const section = document.querySelector(href);
+			if (section) {
 				window.scroll({
 					top: section.offsetTop + 20,
 					left: 0,
 					behavior: "smooth"
 				});
-				window.history.pushState({}, null, section);
+				window.history.pushState({}, null, href);
 			}
 		},
-		backTop(e) {
+		backTop() {
 			window.scroll({
 				top: 0,
 				left: 0,
 				behavior: "smooth"
 			});
-			window.history.pushState({}, null, "");
+			window.history.pushState({}, document.title, window.location.pathname);
 		}
 	},
 	computed: {
@@ -91,7 +91,7 @@ export default {
 	}
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .menu {
 	.menu-item {
 		&--link {
