@@ -28,5 +28,6 @@
       "icons": "lnr-envelope",
       "name": "Contact"
     }
-  ]
+  ],
+  "background": "/uploads/bg-code.jpg"
 }
