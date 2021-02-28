@@ -83,85 +83,87 @@
 	</section>
 </template>
 <script>
-	// melhorar isso
-	import { Loader, LoaderOptions } from "google-maps";
-	import DiagonalLine from "~/components/graphic/DiagonalLine";
-	import Zigzag from "~/components/graphic/Zigzag";
+// melhorar isso
+import { Loader } from "google-maps";
+import axios from "axios";
+import DiagonalLine from "~/components/graphic/DiagonalLine";
+import Zigzag from "~/components/graphic/Zigzag";
 
-	export default {
-		components: {
-			DiagonalLine,
-			Zigzag
-		},
-		mounted() {
-			const location = JSON.parse(this.contact.location);
-			if (process.client && location) {
-				const loader = new Loader('AIzaSyCoM2t5wITxFwK7Ft_OABriah7ZfzrKik0', {});
-				loader.load().then(google => {
-					const map = new google.maps.Map(document.getElementById('map'), {
-						center: {
-							lat: location.coordinates[1],
-							lng: location.coordinates[0]
-						},
-						zoom: 11,
-						disableDefaultUI: true
-					});
-
-					const marker = new google.maps.Marker({
-						position: {
-							lat: location.coordinates[1],
-							lng: location.coordinates[0]
-						},
-						map,
-						title: "Hi there"
-					})
-				});
-			}
-		},
-		methods: {
-			removeNotification() {
-				this.sent = false;
-			},
-			encode(data) {
-				return Object.keys(data)
-					.map(
-						key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-					).join("&");
-			},
-			handleSubmit(e) {
-				fetch("/", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/x-www-form-urlencoded"
+export default {
+	components: {
+		DiagonalLine,
+		Zigzag
+	},
+	mounted() {
+		const location = JSON.parse(this.contact.location);
+		if (process.client && location) {
+			const loader = new Loader('AIzaSyCoM2t5wITxFwK7Ft_OABriah7ZfzrKik0', {});
+			loader.load().then(google => {
+				const map = new google.maps.Map(document.getElementById('map'), {
+					center: {
+						lat: location.coordinates[1],
+						lng: location.coordinates[0]
 					},
-					body: this.encode({
-						"form-name": "ask-question",
-						...this.form
-					})
-				})
-				.then(() => {
-					console.log("thanks");
-					// this.$router.push('thanks');
-				})
-				.catch(() => {
-					console.log("404");
-					// this.$router.push('404');
+					zoom: 11,
+					disableDefaultUI: true
 				});
-			}
-		},
-		data() {
-			return {
-				sent: false,
-				status: {},
-				maps: this.$store.state.contact.location
-			}
-		},
-		computed: {
-			contact() {
-				return this.$store.state.contact;
-			}
+
+				const marker = new google.maps.Marker({
+					position: {
+						lat: location.coordinates[1],
+						lng: location.coordinates[0]
+					},
+					map,
+					title: "Hi there"
+				})
+			});
 		}
-	};
+	},
+	methods: {
+		removeNotification() {
+			this.sent = false;
+		},
+		encode(data) {
+			return Object.keys(data)
+				.map(
+					key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+				).join("&");
+		},
+		handleSubmit(e) {
+			axios({
+				method: "post",
+				url: "/",
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				data: this.encode({
+					"form-name": "ask-question",
+					...this.form
+				})
+			})
+			.then(() => {
+				console.log("thanks");
+				// this.$router.push('thanks');
+			})
+			.catch(() => {
+				console.log("404");
+				// this.$router.push('404');
+			});
+		}
+	},
+	data() {
+		return {
+			sent: false,
+			status: {},
+			maps: this.$store.state.contact.location
+		}
+	},
+	computed: {
+		contact() {
+			return this.$store.state.contact;
+		}
+	}
+};
 </script>
 
 <style lang="scss">

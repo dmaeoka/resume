@@ -12,9 +12,7 @@
 				</div>
 				<div class="section-blog--title font-black text-right uppercase text-xl absolute right-0 bottom-0">BLOG.</div>
 			</div>
-
 			<div class="md:flex flex-wrap -mx-5 -mb-4 md:mb-0">
-
 				<div v-for="post in allBlogPosts" :key="post.id" class="md:w-1/2 lg:w-1/4 px-5 mb-4 md:mb-0 blog-item">
 					<div class="w-full relative">
 						<div class="flex overflow-hidden">

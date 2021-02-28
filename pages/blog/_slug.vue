@@ -1,5 +1,5 @@
 <template>
-	<article class="md:ml-20 overflow-hidden pt-20 md:pt-0">
+	<article class="bg-white md:ml-20 overflow-hidden pt-20 md:pt-0">
 		<h1 class="title">{{title}}</h1>
 		<p class="date">Posted by {{author}} on {{date}}</p>
 		<div class="body" v-html="$md.render(body)"/>
@@ -18,12 +18,12 @@ export default {
 		However, I like the code more this way anyway--it's more explicit what
 		you're bringing in from the JSON.
 		*/
-		let post = await import(`~/content/blog/${params.slug}.json`);
+		let { date,body,title,author,...post } = await import(`~/content/blog/${params.slug}.json`);
 		return {
-			date: post.date,
-			body: post.body,
-			title: post.title,
-			author: post.author,
+			date,
+			body,
+			title,
+			author,
 		};
 	},
 	head() {

@@ -1,5 +1,7 @@
 <template>
-	<div class="font-body">
+	<div
+		class="transition-opacity"
+		:class="{ 'opacity-0': !$store.state.loaded }">
 		<Header />
 		<nuxt />
 		<Footer />

@@ -22,9 +22,6 @@ export default {
 			{ rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
 			{ rel: "stylesheet", media:"all", type:"text/css", href: "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Titillium+Web:200,300,400,600,700&display=swap" },
 		],
-		script: [
-			{ src:  "jquery.min.js" }
-		]
 	},
 
 	/* global SASS file */

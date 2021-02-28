@@ -31,7 +31,6 @@ export default {
 	},
 	methods: {
 		onWaypoint({ going, direction }) {
-			this.$store.commit("toggleMenuState");
 
 			if (going === this.$waypointMap.GOING_IN) {
 				this.isOpen = false;
@@ -40,6 +39,8 @@ export default {
 			if (direction === this.$waypointMap.DIRECTION_TOP) {
 				this.isOpen = true;
 			}
+
+			this.$store.commit("setMenuState", this.isOpen);
 		}
 	}
 };

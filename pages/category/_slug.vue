@@ -1,5 +1,5 @@
 <template>
-	<article class="md:ml-20 overflow-hidden pt-20 md:pt-0">
+	<article class="bg-white md:ml-20 overflow-hidden pt-20 md:pt-0">
 		<h1>test</h1>
 	</article>
 </template>
