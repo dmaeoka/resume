@@ -97,6 +97,9 @@ export default {
 	mounted() {
 		const location = JSON.parse(this.contact.location);
 		if (process.client && location) {
+			if (typeof google != "undefined" && google.hasOwnProperty("maps"))
+				return;
+
 			const loader = new Loader('AIzaSyCoM2t5wITxFwK7Ft_OABriah7ZfzrKik0', {});
 			loader.load().then(google => {
 				const map = new google.maps.Map(document.getElementById('map'), {

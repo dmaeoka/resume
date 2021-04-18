@@ -1,5 +1,5 @@
 <template>
-	<article class="bg-white md:ml-20 overflow-hidden pt-20 md:pt-0">
+	<article class="bg-black md:ml-20 overflow-hidden pt-20 md:pt-0">
 		<h1 class="title">{{title}}</h1>
 		<p class="date">Posted by {{author}} on {{date}}</p>
 		<div class="body" v-html="$md.render(body)"/>

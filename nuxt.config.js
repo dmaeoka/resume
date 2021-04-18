@@ -5,7 +5,7 @@ import siteInfo from "./content/setup/info"
 export default {
 	/* this is a static site, no Node.js */
 	// mode: "spa",
-	mode: "universal",
+	// mode: "universal",
 
 	/* Global headers parts */
 	head: {
@@ -65,7 +65,10 @@ export default {
 		"html.minify": {
 			removeEmptyAttributes: false,
 			removeRedundantAttributes: false
-		}
+		},
+		transpile: [
+			"gsap"
+		]
 	},
 
 	modules: [
