@@ -1,6 +1,6 @@
 <template>
-	<section id="section-contact" class="section-contact relative z-10 min-h-screen">
-		<DiagonalLine colour="text-white" />
+	<section id="section-contact" class="section-contact relative z-10 min-h-screen bg-white text-gray-900">
+		<!-- <DiagonalLine colour="text-white" /> -->
 		<div class="container xl:px-0 px-5 pt-16 pb-24">
 			<div class="section-contact--boxTitle flex flex-wrap mb-10 relative">
 				<div class="flex-1">
@@ -86,12 +86,12 @@
 // melhorar isso
 import { Loader } from "google-maps";
 import axios from "axios";
-import DiagonalLine from "~/components/graphic/DiagonalLine";
+// import DiagonalLine from "~/components/graphic/DiagonalLine";
 import Zigzag from "~/components/graphic/Zigzag";
 
 export default {
 	components: {
-		DiagonalLine,
+		// DiagonalLine,
 		Zigzag
 	},
 	mounted() {

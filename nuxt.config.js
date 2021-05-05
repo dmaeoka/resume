@@ -6,7 +6,7 @@ export default {
 	/* this is a static site, no Node.js */
 	// mode: "spa",
 	// mode: "universal",
-
+	target: 'static',
 	/* Global headers parts */
 	head: {
 		// title: "{{title}}",
@@ -50,6 +50,11 @@ export default {
 
 	/* Build configuration */
 	build: {
+		babel: {
+			plugins: [
+				['@babel/plugin-proposal-private-methods', { loose: true }]
+			]
+		},
 		extractCSS: false,
 		/* Run ESLint on save */
 		extend (config, { isDev, isClient }) {

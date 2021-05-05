@@ -1,6 +1,6 @@
 <template>
-	<section id="section-reviews" class="section-reviews min-h-screen relative z-10 bg-gray-100">
-		<DiagonalLine colour="text-gray-100" />
+	<section id="section-reviews" class="section-reviews min-h-screen relative z-10">
+		<!-- <DiagonalLine colour="text-gray-100" /> -->
 		<div class="container xl:px-0 px-5 py-16">
 			<div class="section-reviews--boxTitle md:flex flex-wrap mb-10 relative">
 				<div class="flex-1">
@@ -49,12 +49,12 @@
 	</section>
 </template>
 <script>
-import DiagonalLine from "~/components/graphic/DiagonalLine";
+// import DiagonalLine from "~/components/graphic/DiagonalLine";
 import Zigzag from "~/components/graphic/Zigzag";
 
 export default {
 	components : {
-		DiagonalLine,
+		// DiagonalLine,
 		Zigzag
 	},
 	computed: {

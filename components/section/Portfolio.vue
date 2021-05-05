@@ -1,6 +1,6 @@
 <template>
-	<section id="section-portfolio" class="section-portfolio relative z-10">
-		<DiagonalLine colour="text-white" />
+	<section id="section-portfolio" class="section-portfolio bg-white text-gray-900 relative z-10">
+		<!-- <DiagonalLine colour="text-white" /> -->
 		<div class="container xl:px-0 px-5 py-24 relative z-10">
 			<div class="section-portfolio--boxTitle mb-4 relative">
 				<div class="text-gray-500">
@@ -40,12 +40,12 @@
 	</section>
 </template>
 <script>
-import DiagonalLine from "~/components/graphic/DiagonalLine";
+// import DiagonalLine from "~/components/graphic/DiagonalLine";
 import Zigzag from "~/components/graphic/Zigzag";
 
 export default {
 	components : {
-		DiagonalLine,
+		// DiagonalLine,
 		Zigzag
 	},
 	data() {
@@ -74,15 +74,6 @@ export default {
 
 <style lang="scss">
 	.section-portfolio {
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 60%;
-			width: 100%;
-			background: #2d3748;
-			bottom: 0;
-		}
 
 		&--title {
 			font-size: 90px;

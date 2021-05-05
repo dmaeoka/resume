@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-white text-gray-900 md:ml-20 overflow-hidden pt-20 md:pt-0">
+	<div class="md:ml-20 overflow-hidden pt-20 md:pt-0">
 		<Home />
 		<About />
 		<Services />

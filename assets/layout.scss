@@ -1,8 +1,14 @@
+// azul escuro 060039
+// amarelo FFB017
+// azul 4484AB
+// vermelho E53855
+// laranja DA774A
+// verde 44AB96
+
 body {
 	@apply font-body;
 	@apply bg-gray-900;
 	@apply text-white;
-
 }
 
 .highlight {
@@ -11,12 +17,12 @@ body {
 
 	&.red {
 		background-position-y: 0;
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 49.9%, rgba(#e53e3e, 1) 50%, rgba(#e53e3e, 1) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 49.9%, rgba(#E53855, 1) 50%, rgba(#E53855, 1) 100%);
 	}
 
 	&.black {
 		background-position-y: 0;
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 49.9%, rgba(#1a202c, 1) 50%, rgba(#1a202c, 1) 100%);
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 49.9%, rgba(#060039, 1) 50%, rgba(#060039, 1) 100%);
 	}
 }
 

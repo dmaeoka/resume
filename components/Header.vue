@@ -39,7 +39,7 @@
 			@click.prevent="backTop"
 			href="#"
 			:class="{ 'md:block animate__fadeInUp': $store.state.menuIsActive }"
-			class="animate__animated absolute bottom-0 leading-none w-full py-4 bg-red-600 hidden text-center hover:bg-red-500"
+			class="animate__animated absolute bottom-0 leading-none w-full py-4 bg-red-600 hover:bg-red-900 hidden text-center"
 		>
 			<span class="lnr lnr-arrow-up text-white text-2xl"></span>
 		</a>
