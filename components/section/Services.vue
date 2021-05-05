@@ -1,5 +1,5 @@
 <template>
-	<section id="section-services" class="section-services relative z-10 min-h-screen bg-gray-900 text-white">
+	<section id="section-services" class="section-services relative z-10 min-h-screen">
 		<!-- <DiagonalLine colour="text-gray-900" /> -->
 		<div class="container xl:px-0 px-5 py-16">
 			<div class="section-services--boxTitle mb-10 relative">
@@ -20,13 +20,13 @@
 					class="md:w-1/2 lg:w-1/4 px-5 mb-5"
 					v-for="sv in services.service" :key="sv.id"
 				>
-					<div class="p-8 text-gray-500 rounded tracking-wide bg-gray-800 h-full">
+					<div class="p-8 text-gray-900 rounded-xl tracking-wide bg-white h-full shadow-2xl">
 						<span
-							class="lnr mb-4 block text-white text-4xl"
+							class="lnr mb-4 block text-4xl"
 							:class="sv.icon"
 						></span>
 						<h3 class="font-display text-red-600 text-xl font-bold mb-4 leading-none">{{ sv.title }}</h3>
-						<p class="font-thin">{{ sv.description }}</p>
+						<p>{{ sv.description }}</p>
 					</div>
 				</div>
 			</div>
